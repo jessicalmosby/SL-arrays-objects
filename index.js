@@ -21,9 +21,9 @@ export const printUserInfo = ({
   username,
   name: { first, last },
   info: {
-    favorites: { food, color },
+    favorites: { color, food },
     pet: { name },
-    address: { street, number, city, country },
+    address: { number, street, city, country },
   },
 }) => {
   return `
@@ -42,9 +42,12 @@ export const printUserInfo = ({
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
 export const getSum = (...rest) => {
-  console.log(`1: ${1}, 2: ${2}, rest: ${rest}`)
+  let total = 0
+  for (const num of rest) {
+    total += num
+  }
+  return total
 }
-getSum
 
 // INPUT: an unknown number of arguments
 // OUTPUT: an array with the first two arguments destructured and the remaining in a nested array
